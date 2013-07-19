@@ -2,7 +2,6 @@ if (Meteor.isClient) {
   Nine = function() {
     // start gamepad init
     var gamepad = new Gamepad();
-    var analogThreshold = 0.2;  // value that determines if analog triggers or not
 
     gamepad.bind(Gamepad.Event.CONNECTED, function(device) {
       // a new gamepad connected
@@ -85,12 +84,16 @@ if (Meteor.isClient) {
       } // end keyboard
 
     }); // end controls init
+    
+    // begin Crafty init
+    Crafty.init(1920, 1080, 'cr-stage');
+    // end Crafty init
 
   }
 
   Meteor.startup(function() { 
     nine = new Nine(); // initialize game instance
-    Crafty.init(1024, 576);
+    // begin test code
     Crafty.c("RandomPosition", {
       init: function() {
         this.attr({
@@ -100,7 +103,8 @@ if (Meteor.isClient) {
     });
 
   var myEnt = Crafty.e("2D, DOM, Fourway, RandomPosition, Color").fourway(5).color("green").attr({w: 50, h: 50});
-  var myEnt = Crafty.e("2D, DOM, Fourway, RandomPosition, Color").fourway(5).color("green").attr({w: 50, h: 50});
+  var myEnt = Crafty.e("2D, DOM, RandomPosition, Color").color("red").attr({w: 50, h: 50});
+  // end test code
   
   });  // Meteor.startup closure
 } // Meteor.isClient closure
