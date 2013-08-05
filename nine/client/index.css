@@ -1,0 +1,18 @@
+/* CSS declarations go here */
+body {
+  overflow : hidden;
+  margin : 0;
+  padding : 0;
+}
+
+#gameviewContainer {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1920px;
+  height: 1080px;
+}
+
+#login {
+  position: absolute;
+}
