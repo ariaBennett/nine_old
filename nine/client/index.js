@@ -45,6 +45,7 @@ nine = (function() {
 
 
 
+Meteor.startup(function() {
 // set the scene size
 var WIDTH = 400,
   HEIGHT = 300;
@@ -127,3 +128,4 @@ scene.add(pointLight);
 // draw!
 renderer.render(scene, 
    camera);
+});
