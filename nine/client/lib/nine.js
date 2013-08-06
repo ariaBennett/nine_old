@@ -1,4 +1,5 @@
 nine = {
   gameview : {
+    size : {}
   },
 };
